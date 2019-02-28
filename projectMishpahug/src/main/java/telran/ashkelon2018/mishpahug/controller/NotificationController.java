@@ -30,13 +30,13 @@ public class NotificationController {
 	}
 
 	@PutMapping("/notification/isRead/{notificationId}")
-	public CodeResponseDto notificationIsRead(@RequestHeader("Authorization") String token, @PathVariable int notificationId) {
-		return notificationService.notificationIsRead(token, notificationId);
+	public CodeResponseDto notificationIsRead(Principal principal, @PathVariable int notificationId) {
+		return notificationService.notificationIsRead(principal.getName(), notificationId);
 	}
 
 	@GetMapping("/notification/count")
-	public NotificationsCountResponseDto countUnreadNotifications(@RequestHeader("Authorization") String token) {
-		return notificationService.countUnreadNotifications(token);
+	public NotificationsCountResponseDto countUnreadNotifications(Principal principal) {
+		return notificationService.countUnreadNotifications(principal.getName());
 	}
 	
 	@PostMapping("/user/firebasetoken/add")

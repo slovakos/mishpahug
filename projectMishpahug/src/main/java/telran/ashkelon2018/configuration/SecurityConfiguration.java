@@ -17,6 +17,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	public void configure(WebSecurity web) {
 		web.ignoring().antMatchers(HttpMethod.GET, "/user/staticfields");
 		web.ignoring().antMatchers(HttpMethod.POST, "/user/registration");
+		web.ignoring().antMatchers(HttpMethod.POST, "/event/allprogresslist");
 	}
 
 	@Override

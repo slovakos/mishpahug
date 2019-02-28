@@ -6,7 +6,7 @@ public class EventListRequestDto {
 													// "lng":"[Double]",
 													// "radius":"[Double]"
 
-	Filter filter;
+	Filters filters;
 													// "dateFrom":"[yyyy-MM-dd]",
 													// "dateTo":"[yyyy-MM-dd]",
 													// "holidays": "[String]",

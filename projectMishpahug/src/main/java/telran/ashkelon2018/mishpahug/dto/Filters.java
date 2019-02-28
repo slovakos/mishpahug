@@ -9,7 +9,7 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public class Filter {
+public class Filters {
 	@JsonFormat(pattern = "yyyy-MM-dd")
 	LocalDate dateFrom;
 	@JsonFormat(pattern = "yyyy-MM-dd")

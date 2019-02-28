@@ -27,7 +27,6 @@ public class EventDto {
 	LocalTime time;
 	int duration;
 	AddressDto address;
-	// "city": "Tel Aviv-Yafo"
 	List<String> food;
 	String description;
 	OwnerDto owner;

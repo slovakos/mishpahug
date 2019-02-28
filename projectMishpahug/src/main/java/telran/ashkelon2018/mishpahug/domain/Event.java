@@ -16,6 +16,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import telran.ashkelon2018.mishpahug.dto.AddressDto;
+import telran.ashkelon2018.mishpahug.dto.Location;
 import telran.ashkelon2018.mishpahug.dto.ParticipantDto;
 
 @Document(collection = "event")
@@ -29,7 +30,8 @@ public class Event {
 	EventId eventId;
 	String title;
 	String holiday;
-	AddressDto address;
+	Address address;
+	Location location;
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	LocalDateTime dateFrom;
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
@@ -43,13 +45,14 @@ public class Event {
 	Set<ParticipantDto> participants;
 
 	
-	public Event(EventId eventId, String title, String holiday, AddressDto address, LocalDateTime dateFrom,
+	public Event(EventId eventId, String title, String holiday, AddressDto addressDto, LocalDateTime dateFrom,
 			LocalDateTime dateTo, int duration, String confession, List<String> food, String description) {
 		super();
 		this.eventId = eventId;
 		this.title = title;
 		this.holiday = holiday;
-		this.address = address;
+		this.address = new Address(addressDto.getCity(), addressDto.getPlace_id());
+		this.location = addressDto.getLocation();
 		this.dateFrom = dateFrom;
 		this.dateTo = dateTo;
 		this.confession = confession;

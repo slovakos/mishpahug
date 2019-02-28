@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import telran.ashkelon2018.mishpahug.domain.Address;
 import telran.ashkelon2018.mishpahug.domain.EventId;
 
 @AllArgsConstructor
@@ -24,9 +25,7 @@ public class ParticipationListResponseDto {
 	@JsonFormat(pattern = "HH:mm:ss")
 	LocalTime time;
 	int duration;
-	AddressDto address;
-	// "city": "Tel Aviv-Yafo"
-
+	Address address;
 	List<String> food;
 	String description;
 	String status;
